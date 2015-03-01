@@ -1,0 +1,34 @@
+{
+  "name": "xe",
+  "version": "0.0.1",
+  "author": {
+    "name": "Julien Valéry",
+    "email": "darul75@gmail.com"
+  },
+  "homepage": "https://github.com/darul75/xe",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/darul75/xe.git"
+  },
+  "keywords": [
+    "angular"    
+  ],
+  "dependencies": {
+    "angular": "1.3.14"    
+  },
+  "devDependencies": {
+    "angular-mocks": "1.3.14"
+  },
+  "authors": [
+    "darul <darul75@gmail.com>"
+  ],
+  "description": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
