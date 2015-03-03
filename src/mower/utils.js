@@ -6,6 +6,12 @@ var fs = require('fs'),
       10  // \n
     ];
 
+/**
+ * Read file line by line 
+ * @module readLine
+ * @param {string} file filepath
+ * @param {object} some options but not used yet
+ */
 var readLine = module.exports = function(file, opts) {
   if (!(this instanceof readLine)) return new readLine(file);
 
