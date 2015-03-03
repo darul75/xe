@@ -30,6 +30,6 @@ build/Release
 node_modules
 
 # Bower dependencies
-src/library/public
+src/library/public/components
 
 
