@@ -71,11 +71,7 @@ Mower.prototype.handleCommand = function(instructions) {
     }     
   }, this);  
 
-  return {
-    x:this.position.x,
-    y:this.position.y,
-    direction: this.direction
-  }  
+  return this;
 };
 
 /**

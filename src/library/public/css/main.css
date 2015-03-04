@@ -37,7 +37,7 @@ form{
 
 form h1{
 	color:#fff;
-	font-size:64px;
+	font-size:40px;
 	font-family:'Cookie', cursive;
 	font-weight: normal;
 	line-height:1;
@@ -47,7 +47,7 @@ form h1{
 form ul{
 	list-style:none;
 	color:#fff;
-	font-size:20px;
+	font-size:18px;
 	font-weight:bold;
 	text-align: left;
 	margin:20px 0 15px;
@@ -61,12 +61,40 @@ form ul li{
 	cursor:pointer;
 }
 
+form ul li.bill{
+	padding:5px 5px;
+}
+
 form ul li span{
 	float:right;
+	color:#eee;
+	font-size: 10px;
 }
 
 form ul li.active{
 	background-color:#8ec16d;
+}
+
+form button {
+	background-color: inherit;
+	border: 0;
+	color: #FFF;
+	font-weight: 500;
+	font-size: 20px;
+	margin: 0 5px;
+}
+
+form ul li img {
+	margin: 0 10;
+	float:left;
+}
+
+.right {
+  float: right;
+  text-align: center;
+}
+.left {
+	overflow: hidden;
 }
 
 div.total{
