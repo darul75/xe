@@ -2,8 +2,6 @@
 
 ## Mower exercice
 
-First exercise: play with mowers
-
 Made with NodeJS and using Mocha testing framework.
 
 Test input data are of 2 types:
@@ -24,4 +22,14 @@ mocha test\main.js
 http://darul75.github.io/xe/
 
 ## Hero Book exercice
+
+Made with AngularJS framework.
+
+### Install
+```bash
+$ bower install
+```
+
+### Play
+http://darul75.github.io/xe/library/public/
 
