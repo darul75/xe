@@ -27,7 +27,7 @@ section, footer, header, aside, nav{
 --------------------------*/
 
 form{
-	background-color: #61a1bc;
+	background-color: #CEBC99;
 	border-radius: 2px;
 	box-shadow: 0 1px 1px #ccc;
 	width: 400px;
@@ -55,7 +55,7 @@ form ul{
 
 form ul li{
 	padding:20px 30px;
-	background-color:#e35885;
+	background-color:#AC916B;
 	margin-bottom:8px;
 	box-shadow:0 1px 1px rgba(0,0,0,0.1);
 	cursor:pointer;
@@ -72,16 +72,17 @@ form ul li span{
 }
 
 form ul li.active{
-	background-color:#8ec16d;
+	background-color:#666F7D;
 }
 
 form button {
 	background-color: inherit;
+	cursor: pointer;
 	border: 0;
 	color: #FFF;
 	font-weight: 500;
-	font-size: 20px;
-	margin: 0 5px;
+	font-size: 20px;	
+	padding: 10 10;
 }
 
 form ul li img {

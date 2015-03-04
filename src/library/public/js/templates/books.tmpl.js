@@ -8,7 +8,7 @@
         '<div class="right">'+
           '<button ng-click="click(0, b)">-</button>'+
           '<button ng-click="click(1, b)">+</button>'+
-          '<div class="count">{{b.count > 0 && "" || b.count}}</div>'+
+          '<div class="count" ng-show="b.count > 0">({{b.count}})</div>'+
         '</div>'+
         '<div class="left">'+
           '<img ng-src="{{b.cover}}" height="80px" />'+
@@ -24,14 +24,13 @@
     // purchase command template
     templateCache.put('library/purchase.tmpl.html',
       '<h1>Bravo, une réduction vous est offerte</h1>'+
-      '<ul><li class="bill" ng-repeat="b in books" ng-class="{\'active\':b.count > 0}">'+
+      '<ul><li class="bill" ng-repeat="b in books" ng-class="{\'active\':b.count > 0}" ng-if="b.count > 0">'+
         '<div class="right">'+          
-          '<div class="count">{{b.count > 0 && "" || b.count}}</div>'+
+          '<div class="count" ng-show="b.count > 0">({{b.count}})</div>'+
         '</div>'+
         '<div class="left">'+
           '<img ng-src="{{b.cover}}" height="50px" />'+
-          '{{b.title}}'+
-          '<span>{{b.price}}€</span>'+
+          '{{b.title}}'+          
         '</div>'+
       '</li>'+
       '<div class="total">'+    
