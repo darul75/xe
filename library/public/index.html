@@ -1,0 +1,22 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="components/angular/angular.js"></script>
+	<script type="text/javascript" src="components/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="components/angular-resource/angular-resource.js"></script>
+</head>
+<body>
+	<div ng-app="angular-library"  style="width:300px;">
+		<form ng-controller="MainCtrl">
+			<!-- BASKET BOOK VIEW -->
+			<books ng-show="!isPurchaseView()"></books>
+			<!-- BILL VIEW -->
+			<purchase ng-show="isPurchaseView()"></purchase>
+		</form>
+	</div>
+	<script type="text/javascript" src="js/templates/books.tmpl.js"></script>
+	<script type="text/javascript" src="js/controllers.js"></script>
+	<script type="text/javascript" src="js/services.js"></script>
+	<script type="text/javascript" src="js/directives.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</html>
