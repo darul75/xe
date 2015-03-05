@@ -42,17 +42,26 @@ describe('angular-library', function () {
 
   obj;  
 
-  beforeEach(module('angular-library'));
+  beforeEach(module('angular-library'));  
 
-  beforeEach(inject(function ($injector, $httpBackend) {
+  beforeEach(inject(function ($injector, $httpBackend, _booksOffersFactory_) {
     httpBackend = $httpBackend;    
-    testDirective = $injector.invoke(fixture);
-  }));
+    testDirective = $injector.invoke(fixture);    
+    booksOffersFactory = _booksOffersFactory_;    
+  }));  
   
+  // DIRECTIVE TESTING
   describe('books basket directive', function () {
     it('basket', function () {      
       testDirective('<books></books>', "€ 35.00");
-    });      
+    });    
+  });
+
+  // SERVICE TESTING
+  describe('books services', function () {
+    it('testing factory', function() {
+      
+    });    
   });
 
 });
