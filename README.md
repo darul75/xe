@@ -25,6 +25,17 @@ http://darul75.github.io/xe/
 
 Made with AngularJS framework.
 
+Not using any router for this simple demo.
+* 2 controllers
+  * main one for application
+  * one dedicated to basket directive
+* 2 directives
+  * one for basket
+  * one for billing
+* 2 factories
+  * books: retrieve booking list
+  * books commercial offers: retrieve offers + compute reduction
+
 ### Install
 ```bash
 $ bower install
