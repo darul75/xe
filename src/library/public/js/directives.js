@@ -85,7 +85,7 @@ angular.module('libraryDirectives', [])
 		scope.isTotalValue = function() {		  	
 			return basketCtrl.totalValue;
 		};
-	}
+	};
 	return {
 		controller: 'BasketCtrl', // delegate business logic
 		templateUrl: 'library/books.tmpl.html',
@@ -106,11 +106,9 @@ angular.module('libraryDirectives', [])
 				location.path('/');
 			};
 
-			// resume
+			// catch event for billing display
 			scope.$on('bill', function(event, data) { 
-				scope.total = data.oldTotal;
-				scope.bill = data.total;
-				scope.books = data.books;
+				scope.transaction = data;
 			});
 			
 		}
