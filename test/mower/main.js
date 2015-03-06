@@ -1,5 +1,5 @@
 // test/main.js
-var moverGame = require('../src/mower/mower-game.js');
+var moverGame = require('../../src/mower/mower-game.js');
 var assert = require("assert");
 
 describe('moover game', function() {
