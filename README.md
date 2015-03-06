@@ -23,7 +23,7 @@ http://darul75.github.io/xe/
 
 ## Hero Book exercice
 
-Made with AngularJS framework.
+Made with AngularJS framework and using Karma testing framework
 
 Not using any router for this simple demo.
 * 2 controllers
