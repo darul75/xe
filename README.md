@@ -15,7 +15,7 @@ $ npm install -g mocha
 
 ### Play test
 ```bash
-mocha test\main.js
+$ mocha test/mower/main.js
 ```
 
 ### API Documentation
@@ -38,9 +38,14 @@ Not using any router for this simple demo.
 
 ### Install
 ```bash
+$ npm install
 $ bower install
 ```
 
 ### Play
 http://darul75.github.io/xe/library/public/
 
+### Play test
+```bash
+$ karma start test\library\conf.js
+```
