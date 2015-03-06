@@ -5,8 +5,8 @@
 Made with NodeJS and using Mocha testing framework.
 
 Test input data are of 2 types:
-- file, example : https://github.com/darul75/xe/blob/master/test/mower.txt
-- string, example : https://github.com/darul75/xe/blob/master/test/main.js#L25
+- file, example : https://github.com/darul75/xe/blob/master/test/mower/mower.txt
+- string, example : https://github.com/darul75/xe/blob/master/test/mower/main.js#L25
 
 ### Install
 ```bash
@@ -47,5 +47,5 @@ http://darul75.github.io/xe/library/public/
 
 ### Play test
 ```bash
-$ karma start test\library\conf.js
+$ karma start test/library/conf.js
 ```
