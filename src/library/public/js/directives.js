@@ -6,12 +6,16 @@ angular.module('libraryDirectives', [])
 	function(scope, location, booksFactory, booksOffersFactory) {
 
 	var service = booksOffersFactory;
-	var self = this;
+	var self = this;	
 
 	// fetch by api call
 	this.fetchBooks = function(cb) {		
 		booksFactory.query(cb);
-	};					  	
+	};
+
+	this.fetchBooks(function(data){
+		self.books = data;
+	});					  	
 
 	// handle item click add or remove
 	this.click = function(add, book){
@@ -24,11 +28,15 @@ angular.module('libraryDirectives', [])
 		}		  	
 	};
 
+	this.isTotalValue = function() {		  	
+		return self.totalValue;
+	};
+
 	// compute total item price
-	this.total = function(books){
+	this.total = function(){
 		self.totalValue = 0;				
 
-		angular.forEach(books, function(b){
+		angular.forEach(self.books, function(b){
 			if (b.count){
 				self.totalValue+= b.count * b.price;
 			}
@@ -38,18 +46,18 @@ angular.module('libraryDirectives', [])
 	};
 
 	// trigger purchase
- 	this.purchase = function(transaction) {
-  	self.items = transaction.items;    
-    var isbns = ''
-    angular.forEach(self.items, function(item){
+ 	this.purchase = function() {
+  	var items = self.books;    
+    var isbns = '';
+    angular.forEach(items, function(item){
       isbns += item.count > 0 ? item.isbn+',' : ''
     });
     // 1) fetch offers
     booksOffersFactory.resource.query({isbns:isbns}, function(data) {
     	// 2) compute new total
-      var bill = booksOffersFactory.computeTotalPrice(self.items, self.totalValue, data.offers);
+      var bill = booksOffersFactory.computeTotalPrice(items, self.totalValue, data.offers);
       // 3) emit result
-      scope.$emit('bill', {oldTotal:self.totalValue, total:bill, books: self.items});
+      scope.$emit('bill', {oldTotal:self.totalValue, total:bill, books: items});
     });
 
     // redirect
@@ -58,42 +66,15 @@ angular.module('libraryDirectives', [])
 	
 }])
 // book basket directive
-.directive('books', [function() {
-
-	// link function
-	var linkFn = function(scope, element, attrs, basketCtrl){			
-		basketCtrl.fetchBooks(function(data){
-			scope.books = data;
-		});
-
-		scope.purchase = function() {		  	
-			basketCtrl.purchase({items:scope.books});
-		};
-
-		scope.click = function(add, book) {
-			basketCtrl.click(add, book);
-		};
-
-		scope.total = function() {
-			return basketCtrl.total(scope.books);
-		};
-
-		scope.total = function() {
-			return basketCtrl.total(scope.books);
-		};
-
-		scope.isTotalValue = function() {		  	
-			return basketCtrl.totalValue;
-		};
-	};
+.directive('books', [function() {	
 	return {
 		controller: 'BasketCtrl', // delegate business logic
+		controllerAs: 'ctrl',
 		templateUrl: 'library/books.tmpl.html',
 		restrict: 'E',
 		scope: {
       'onpurchase': '&onPurchase'
-    },
-		link: linkFn
+    }
 	};
 }])
 // purchase directive
@@ -101,7 +82,7 @@ angular.module('libraryDirectives', [])
 	return {		
 		templateUrl:'library/purchase.tmpl.html',
 		restrict: 'E',		
-		link: function(scope, element, attrs){
+		link: function(scope, element, attrs){			
 			scope.cancel = function() {
 				location.path('/');
 			};
@@ -109,8 +90,7 @@ angular.module('libraryDirectives', [])
 			// catch event for billing display
 			scope.$on('bill', function(event, data) { 
 				scope.transaction = data;
-			});
-			
+			});			
 		}
 	};
 }])

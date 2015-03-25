@@ -4,10 +4,10 @@
     // book basket template
     templateCache.put('library/books.tmpl.html',  
       '<h1>Librhero</h1>'+
-      '<ul><li ng-repeat="b in books" ng-class="{\'active\':b.count > 0}">'+
+      '<ul><li ng-repeat="b in ctrl.books" ng-class="{\'active\':b.count > 0}">'+
         '<div class="right">'+
-          '<button ng-click="click(0, b)">-</button>'+
-          '<button ng-click="click(1, b)">+</button>'+
+          '<button ng-click="ctrl.click(0, b)">-</button>'+
+          '<button ng-click="ctrl.click(1, b)">+</button>'+
           '<div class="count" ng-show="b.count > 0">({{b.count}})</div>'+
         '</div>'+
         '<div class="left">'+
@@ -18,9 +18,9 @@
       '</li>'+
       '</ul>'+
       '<div class="total">'+    
-        'Total: <span>{{total() | currency: "€ "}}</span>'+
+        'Total: <span>{{ctrl.total() | currency: "€ "}}</span>'+
       '</div>'+
-      '<button ng-click="purchase()" ng-show="isTotalValue()">Acheter</div>');
+      '<button ng-click="ctrl.purchase()" ng-show="ctrl.isTotalValue()">Acheter</div>');
     // purchase command template
     templateCache.put('library/purchase.tmpl.html',
       '<h1>Bravo, une réduction vous est offerte</h1>'+
